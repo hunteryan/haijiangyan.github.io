@@ -1,286 +1,549 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>严海江 - 数据仓库开发工程师简历</title>
-    <style>
-        :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --border: #e2e8f0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>严海江 - 数据仓库开发工程师</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #e8ecf1;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 40px 20px;
+  }
+  .page {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.08);
+    overflow: hidden;
+  }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* ===== Tabs ===== */
+  .tabs {
+    display: flex;
+    background: #1a1a2e;
+    padding: 0 24px;
+    gap: 0;
+  }
+  .tabs a {
+    display: inline-block;
+    padding: 14px 28px;
+    color: #8899bb;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-bottom: 3px solid transparent;
+    transition: all .2s;
+  }
+  .tabs a:hover { color: #fff; }
+  .tabs a.active {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-main);
-            background-color: var(--bg-body);
-            padding: 2rem 1rem;
-        }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
+  /* ===== Resume ===== */
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 40px 48px 32px;
+  }
+  .header h1 { font-size: 30px; font-weight: 700; letter-spacing: 2px; }
+  .header .subtitle { font-size: 16px; color: #a0b4da; margin-top: 4px; }
+  .header .contact {
+    display: flex; flex-wrap: wrap; gap: 12px 28px;
+    margin-top: 14px; font-size: 14px; color: #c8d4ec;
+  }
+  .header .contact span { display: flex; align-items: center; gap: 6px; }
+  .body { padding: 32px 48px 40px; }
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 17px; font-weight: 700; color: #1a1a2e;
+    border-left: 4px solid #1a1a2e; padding-left: 12px;
+    margin-bottom: 14px; letter-spacing: 1px;
+  }
+  .edu-item { font-size: 14px; color: #333; }
+  .edu-item strong { font-weight: 600; }
+  .edu-item .date { float: right; color: #888; font-size: 13px; }
+  .tag {
+    background: #f0f2f5; color: #1a1a2e; padding: 2px 12px;
+    border-radius: 14px; font-size: 12px; font-weight: 500;
+  }
+  .tag-tech { background: #e8edf5; color: #1a1a2e; }
+  .exp-item { margin-bottom: 18px; }
+  .exp-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 4px 12px;
+  }
+  .exp-header .company { font-size: 16px; font-weight: 700; color: #1a1a2e; }
+  .exp-header .role { font-size: 14px; color: #555; font-weight: 500; }
+  .exp-header .date { font-size: 13px; color: #999; white-space: nowrap; }
+  .exp-desc { font-size: 13.5px; color: #333; margin-top: 4px; padding-left: 4px; }
+  .exp-desc ul { list-style: none; padding: 0; }
+  .exp-desc li {
+    position: relative; padding-left: 16px; margin-bottom: 3px;
+  }
+  .exp-desc li::before { content: "•"; position: absolute; left: 2px; color: #888; }
+  .inline-tags { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 6px 0 2px; }
+  .inline-tags .tag { font-size: 11px; padding: 1px 10px; }
+  .proj-item { margin-bottom: 10px; }
+  .proj-item .proj-title { font-weight: 600; font-size: 14px; color: #1a1a2e; }
+  .proj-item .proj-desc { font-size: 13.5px; color: #333; padding-left: 4px; }
+  .self-desc { font-size: 13.5px; color: #333; line-height: 1.8; }
+  .self-desc p { margin-bottom: 4px; }
+  .two-col { display: flex; gap: 24px; flex-wrap: wrap; }
+  .two-col > div { flex: 1; min-width: 200px; }
 
-        /* Header & Contact */
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid var(--border);
-        }
+  /* ===== SOP ===== */
+  .sop-page { padding: 40px 48px; }
+  .cover {
+    text-align: center;
+    padding: 40px 0 32px;
+    border-bottom: 3px double #1a1a2e;
+    margin-bottom: 32px;
+  }
+  .cover h1 { font-size: 26px; font-weight: 700; letter-spacing: 3px; }
+  .cover .sub { font-size: 14px; color: #666; margin-top: 8px; }
+  .cover .meta { margin-top: 16px; font-size: 13px; color: #999; }
+  .sop-section { margin-bottom: 28px; }
+  .sop-st {
+    font-size: 20px; font-weight: 700;
+    border-left: 5px solid #1a1a2e; padding-left: 14px; margin-bottom: 14px;
+  }
+  .sop-st2 {
+    font-size: 17px; font-weight: 700;
+    border-left: 4px solid #555; padding-left: 12px;
+    margin: 20px 0 10px;
+  }
+  .sop-st3 {
+    font-size: 15px; font-weight: 600; color: #333;
+    border-left: 3px solid #888; padding-left: 10px;
+    margin: 16px 0 8px;
+  }
+  .sop-page p { margin-bottom: 8px; font-size: 14px; color: #333; }
+  .sop-page ul, .sop-page ol { padding-left: 20px; margin-bottom: 8px; }
+  .sop-page li { font-size: 14px; color: #333; margin-bottom: 2px; }
+  .sop-page li strong { color: #1a1a2e; }
+  .main-table {
+    width: 100%; border-collapse: collapse; margin: 14px 0 24px; font-size: 13px;
+  }
+  .main-table thead th {
+    background: #1a1a2e; color: #fff;
+    padding: 10px 12px; text-align: left; font-weight: 600;
+  }
+  .main-table thead th:first-child { border-radius: 6px 0 0 0; }
+  .main-table thead th:last-child { border-radius: 0 6px 0 0; }
+  .main-table tbody td {
+    padding: 10px 12px; border-bottom: 1px solid #e8ecf1; vertical-align: top;
+  }
+  .main-table tbody tr:nth-child(even) { background: #f8f9fc; }
+  .main-table tbody tr:hover { background: #eef1f8; }
+  .main-table .col-phase { width: 12%; font-weight: 600; color: #1a1a2e; }
+  .main-table .col-biz { width: 30%; }
+  .main-table .col-tech { width: 30%; }
+  .main-table .col-output { width: 28%; }
+  .deliverable {
+    background: #f8f9fc; border: 1px solid #e0e4ec;
+    border-radius: 6px; padding: 10px 14px;
+    margin: 8px 0; font-size: 13px; color: #555;
+  }
+  .deliverable strong { color: #1a1a2e; }
+  .principle-list {
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0;
+  }
+  .principle-item {
+    background: #f0f2f5; border-radius: 20px;
+    padding: 3px 14px; font-size: 13px; color: #1a1a2e; font-weight: 500;
+  }
 
-        h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem; }
-        .target-role { font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-
-        /* SOP Link Banner */
-        .sop-banner {
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border: 1px solid #bfdbfe;
-            border-radius: 8px;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .sop-text { font-weight: 600; color: #1e40af; }
-        .sop-btn {
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1.25rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        .sop-btn:hover { background: #1d4ed8; }
-
-        /* Sections */
-        section { margin-bottom: 2.5rem; }
-        h2 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            border-left: 4px solid var(--accent);
-            padding-left: 0.75rem;
-            margin-bottom: 1.25rem;
-        }
-
-        p, li { color: var(--text-main); margin-bottom: 0.5rem; }
-        ul { list-style-type: disc; padding-left: 1.5rem; }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .skill-category h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.5rem; }
-        .skill-category p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
-
-        /* Experience & Projects */
-        .job-header, .proj-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
-        .company, .project-name { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
-        .date { font-size: 0.9rem; color: var(--text-light); white-space: nowrap; }
-        .role { font-size: 0.95rem; color: var(--accent); font-weight: 500; margin-bottom: 0.75rem; }
-
-        .job-block, .proj-block { margin-bottom: 2rem; }
-        .job-block:last-child, .proj-block:last-child { margin-bottom: 0; }
-
-        /* Education */
-        .edu-item { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .edu-school { font-weight: 700; color: var(--primary); }
-        .edu-detail { color: var(--text-light); }
-
-        @media (max-width: 600px) {
-            .container { padding: 1.5rem; }
-            h1 { font-size: 2rem; }
-            .contact-info { flex-direction: column; gap: 0.5rem; }
-            .job-header { flex-direction: column; gap: 0.25rem; }
-        }
-    </style>
+  @media (max-width: 640px) {
+    .header { padding: 28px 20px; }
+    .body, .sop-page { padding: 24px 20px; }
+    .header .contact { flex-direction: column; gap: 6px; }
+    .tabs a { padding: 12px 16px; font-size: 13px; }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; }
+    .header { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .tabs { display: none; }
+    .tab-content { display: block !important; }
+  }
+</style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>严海江</h1>
-        <div class="target-role">求职意向：数据仓库开发工程师 / 数据开发工程师</div>
-        <div class="contact-info">
-            <span>📱 13585992689</span>
-            <span>📧 haijiang_yan@126.com</span>
-            <span>📍 现居：上海</span>
-        </div>
-    </header>
+<div class="page">
 
-    <!-- SOP 链接入口 -->
-    <div class="sop-banner">
-        <div class="sop-text">📘 个人方法论沉淀：《数仓0-1建设：业务×技术双轨驱动SOP白皮书》</div>
-        <!-- 请将下方 href 替换为实际的 SOP 网页文件路径或在线链接 -->
-        <a href="./data_warehouse_sop.html" class="sop-btn" target="_blank">查看 SOP 白皮书 →</a>
+<!-- Tabs -->
+<nav class="tabs">
+  <a href="#" class="active" data-tab="resume">📄 简历</a>
+  <a href="#" data-tab="sop">📘 数仓SOP白皮书</a>
+</nav>
+
+<!-- ====== Resume ====== -->
+<div id="tab-resume" class="tab-content active">
+  <div class="header">
+    <h1>严海江</h1>
+    <div class="subtitle">数据仓库开发工程师 / 数据开发工程师</div>
+    <div class="contact">
+      <span>📞 13585992689</span>
+      <span>📧 haijiang_yan@126.com</span>
+      <span>📍 上海</span>
+      <span>🎯 数据仓库开发 / 数据开发</span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- 教育背景 -->
+    <div class="section">
+      <div class="section-title">教育背景</div>
+      <div class="edu-item">
+        <strong>上海大学</strong> ｜ 应用数学 本科
+        <span class="date">2008.09 – 2012.07</span>
+      </div>
     </div>
 
     <!-- 核心技能 -->
-    <section>
-        <h2>核心技能</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>数仓技术</h3>
-                <p>精通 Hive/Spark/Flink，熟练复杂 SQL、窗口函数、慢 SQL 优化、分区调优；掌握 ODS/DWD/DWS/ADS 全分层架构，精通维度建模、总线矩阵、宽表设计；具备 PB 级海量日志与业务数据处理、性能治理、集群资源优化经验。</p>
-            </div>
-            <div class="skill-category">
-                <h3>游戏专项</h3>
-                <p>Garena 海外游戏数仓实战，熟悉客户端埋点、服务端日志、业务库多源接入；精通用户、对局、付费、活动、反作弊、风控处罚全主题域建模。</p>
-            </div>
-            <div class="skill-category">
-                <h3>业务能力</h3>
-                <p>0-1 搭建游戏数仓、用户画像、行为分析、数据集市；具备广告增收、LTV 提升、流失召回、黑产治理、ABTest 实战经验。行业覆盖：游戏、互联网、阅读、电商返利、跨境贸易、汽车/金融/保险。</p>
-            </div>
-            <div class="skill-category">
-                <h3>AI 数据治理</h3>
-                <p>负责 AI 侧元数据统一、数据血缘梳理、训练数据清洗与质量校验，支撑算法模型迭代。</p>
-            </div>
-            <div class="skill-category">
-                <h3>工具生态</h3>
-                <p>熟练使用 Airflow、StarRocks、Scylla、ClickHouse、Doris、TiDB、DataX、HBase、Redis、DolphinScheduler、Kettle、Tableau；熟悉大数据调度、数据同步、数据质量监控、数据血缘、元数据治理。</p>
-            </div>
+    <div class="section">
+      <div class="section-title">核心技能</div>
+      <div class="two-col">
+        <div>
+          <div style="font-weight:600; font-size:14px; margin-bottom:4px;">数仓与大数据</div>
+          <div class="inline-tags">
+            <span class="tag tag-tech">Hive/Spark SQL</span>
+            <span class="tag tag-tech">Pyspark</span>
+            <span class="tag tag-tech">Flink</span>
+            <span class="tag tag-tech">数仓分层建模</span>
+            <span class="tag tag-tech">维度建模</span>
+            <span class="tag tag-tech">宽表设计</span>
+            <span class="tag tag-tech">指标体系建设</span>
+            <span class="tag tag-tech">PB级性能优化</span>
+          </div>
+          <div style="margin-top:10px; font-weight:600; font-size:14px; margin-bottom:4px;">AI &amp; 数据治理</div>
+          <div class="inline-tags">
+            <span class="tag tag-tech">AI Native 开发</span>
+            <span class="tag tag-tech">OpenCode</span>
+            <span class="tag tag-tech">Cursor</span>
+            <span class="tag tag-tech">元数据管理</span>
+            <span class="tag tag-tech">数据血缘</span>
+            <span class="tag tag-tech">数据清洗与质量校验</span>
+          </div>
         </div>
-    </section>
+        <div>
+          <div style="font-weight:600; font-size:14px; margin-bottom:4px;">工具生态</div>
+          <div class="inline-tags">
+            <span class="tag tag-tech">Airflow</span>
+            <span class="tag tag-tech">DolphinScheduler</span>
+            <span class="tag tag-tech">DataX</span>
+            <span class="tag tag-tech">Kettle</span>
+            <span class="tag tag-tech">StarRocks</span>
+            <span class="tag tag-tech">ClickHouse</span>
+            <span class="tag tag-tech">TiDB</span>
+            <span class="tag tag-tech">Scylla</span>
+            <span class="tag tag-tech">Redis</span>
+            <span class="tag tag-tech">Tableau</span>
+            <span class="tag tag-tech">FineBI</span>
+          </div>
+          <div style="margin-top:10px; font-weight:600; font-size:14px; margin-bottom:4px;">行业覆盖</div>
+          <div class="inline-tags">
+            <span class="tag tag-tech">游戏</span>
+            <span class="tag tag-tech">电商</span>
+            <span class="tag tag-tech">汽车</span>
+            <span class="tag tag-tech">金融</span>
+            <span class="tag tag-tech">保险</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- 工作经历 -->
-    <section>
-        <h2>工作经历</h2>
-        
-        <div class="job-block">
-            <div class="job-header">
-                <span class="company">Garena</span>
-                <span class="date">2021.08 – 至今</span>
-            </div>
-            <div class="role">数据仓库开发工程师</div>
-            <ul>
-                <li>负责多款海外游戏全域数仓 0→1 建设，完成埋点日志、服务端、业务库多源接入，构建标准分层与主题模型，统一全局指标口径。</li>
-                <li>主导用户、对局、付费、活动、道具、反作弊等核心宽表设计与开发，支撑留存、LTV、ROI、活动复盘、风控处罚、投放效果等全场景分析。</li>
-                <li>承担 PB 级海量游戏数据加工与性能调优，通过分区裁剪、并行优化、脚本重构降低任务耗时，节约集群资源。</li>
-                <li>搭建游戏用户画像体系，落地用户分层、付费等级、流失预警、玩法偏好标签，赋能精细化运营、精准投放与流失召回。</li>
-                <li>构建反作弊风控数据体系，整合外挂日志、处罚工单、异常对局数据，输出安全大盘与特征宽表，支撑黑产打击与生态治理。</li>
-                <li>AI 项目元数据治理支撑：统一 AI 侧元数据、字段口径、数据生命周期管理；梳理全链路数据血缘，搭建数据目录；完成大规模训练数据清洗与质量校验，为算法模型迭代提供标准化数据支撑。</li>
-                <li>负责数据仓库的日常维护和优化，确保数据的准确性和及时性。对接运营、算法、风控、投放团队，保障核心报表与指标稳定产出，支撑业务增长与决策。</li>
-            </ul>
-        </div>
+    <div class="section">
+      <div class="section-title">工作经历</div>
 
-        <div class="job-block">
-            <div class="job-header">
-                <span class="company">触宝科技</span>
-                <span class="date">2019.02 – 2021.07</span>
-            </div>
-            <div class="role">数据仓库开发工程师</div>
-            <ul>
-                <li>搭建公司级用户画像、行为分析报表、小说数据集市三大体系，支撑广告、推荐、运营、风控、推送全场景。</li>
-                <li>设计数仓模型与指标体系，推动业务落地，实现广告年增收数百万、7 日留存 & LTV 提升 4%、流失拉活提升 1%。</li>
-                <li>固化行为分析指标，减少运营 30% 临时 SQL 查询；数据集市支持 70% 业务自助查询，降低底层依赖。</li>
-            </ul>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="company">Garena</span>
+          <span class="role">数据仓库开发工程师</span>
+          <span class="date">2021.08 – 至今</span>
         </div>
+        <div class="exp-desc">
+          <ul>
+            <li>负责多款海外游戏全域数仓 0→1 建设，完成埋点日志、服务端、业务库多源接入，构建标准分层与主题模型，统一全局指标口径</li>
+            <li>主导用户、对局、付费、活动、反作弊等核心宽表设计与开发，支撑留存、LTV、ROI、活动复盘、风控处罚、投放效果等全场景分析</li>
+            <li>承担 PB 级海量游戏数据加工与性能调优，通过分区裁剪、并行优化、脚本重构降低任务耗时，节约集群资源</li>
+            <li>搭建游戏用户画像体系，落地用户基础属性、付费等级、玩法偏好等标签，赋能精细化运营、精准投放与流失召回</li>
+            <li>构建反作弊风控数据体系，整合外挂日志、处罚工单、异常对局数据，输出安全大盘与特征宽表，支撑黑产打击与生态治理</li>
+            <li>AI 项目元数据治理支撑：统一 AI 侧元数据、字段口径、数据生命周期管理；梳理全链路数据血缘，搭建数据目录；完成大规模训练数据清洗与质量校验</li>
+            <li>负责数据仓库日常维护和优化，确保数据准确性和及时性；对接运营、算法、风控、投放团队，保障核心报表与指标稳定产出</li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="job-block">
-            <div class="job-header">
-                <span class="company">返利网</span>
-                <span class="date">2017.07 – 2019.02</span>
-            </div>
-            <div class="role">数据开发工程师</div>
-            <ul>
-                <li>搭建自营数据集市，40+ 源表接入，构建用户、商品、渠道、交易等维度模型，产出 20+ 业务报表。</li>
-                <li>开发 ABTest 效果评估工具，完成搜索推荐画像标签建设与日志清洗。</li>
-            </ul>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="company">触宝科技</span>
+          <span class="role">数据仓库开发工程师</span>
+          <span class="date">2019.02 – 2021.07</span>
         </div>
+        <div class="exp-desc">
+          <ul>
+            <li>搭建公司级用户画像、行为分析报表、小说数据集市三大体系，支撑广告、推荐、运营、风控、推送全场景</li>
+            <li>固化行为分析指标，减少运营 30% 临时 SQL 查询；数据集市支持 70% 业务自助查询，降低底层依赖</li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="job-block">
-            <div class="job-header">
-                <span class="company">链尚国际贸易</span>
-                <span class="date">2016.06 – 2017.07</span>
-            </div>
-            <div class="role">数据工程师</div>
-            <ul>
-                <li>用户日志结构化处理，Kettle 搭建 ETL 调度，效率提升 30%。</li>
-                <li>Tableau 报表体系落地，培训业务自助分析，降低取数需求 30%。</li>
-            </ul>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="company">返利网</span>
+          <span class="role">数据开发工程师</span>
+          <span class="date">2017.07 – 2019.02</span>
         </div>
+        <div class="exp-desc">
+          <ul>
+            <li>搭建自营数据集市，40+ 源表接入，构建用户、商品、渠道、交易等维度模型，产出 20+ 业务报表</li>
+            <li>开发 ABTest 效果评估工具，完成搜索推荐画像标签建设与日志清洗</li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="job-block">
-            <div class="job-header">
-                <span class="company">早期工作（上海仁维软件 / 扬罗必凯广告 / 欧维特信息系统）</span>
-                <span class="date">2012.07 – 2016.06</span>
-            </div>
-            <p style="margin-top: 0.5rem;">负责汽车、服装、保险、金融、财务等行业数仓项目，完成 ETL 开发、数仓建模、调度、报表全流程。</p>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="company">链尚国际贸易</span>
+          <span class="role">数据工程师</span>
+          <span class="date">2016.06 – 2017.07</span>
         </div>
-    </section>
+        <div class="exp-desc">
+          <ul>
+            <li>用户日志结构化处理，Kettle 搭建 ETL 调度，效率提升 30%</li>
+            <li>Tableau 报表体系落地，培训业务自助分析，降低取数需求 30%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="company">早期经历</span>
+          <span class="role">数据仓库项目</span>
+          <span class="date">2012.07 – 2016.06</span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>上海仁维软件 / 扬罗必凯广告 / 欧维特信息系统 — 负责汽车、服装、保险、金融、财务等行业数仓项目，完成 ETL 开发、数仓建模、调度、报表全流程</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- 项目经历 -->
-    <section>
-        <h2>项目经历</h2>
-        
-        <div class="proj-block">
-            <div class="proj-header">
-                <span class="project-name">Garena 游戏数仓 0-1 建设</span>
-            </div>
-            <p>全域数据接入、分层建模、主题域设计、PB 级数据性能调优、日常维护优化；保障数据准确及时，支撑留存、LTV、风控、投放、活动复盘。</p>
-        </div>
+    <div class="section">
+      <div class="section-title">项目经历</div>
+      <div class="proj-item">
+        <div class="proj-title">Garena 游戏数仓 0-1 建设</div>
+        <div class="proj-desc">全域数据接入、分层建模、主题域设计、PB 级数据性能调优、日常维护优化；保障数据准确及时，支撑留存、LTV、风控、投放、活动复盘</div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">Garena 游戏用户画像与精细化运营</div>
+        <div class="proj-desc">整合玩家数据搭建分层 / 流失预警 / 付费等级标签，赋能精准投放、流失召回、活动触达</div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">Garena 反作弊风控数据体系</div>
+        <div class="proj-desc">整合外挂 / 处罚 / 异常对局数据，搭建特征宽表与风控大盘，支撑安全治理与黑产打击</div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">Garena AI 项目元数据治理支撑</div>
+        <div class="proj-desc">统一元数据、字段口径、生命周期管理；梳理数据血缘，搭建数据目录；完成训练数据清洗与质量校验</div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-title">触宝科技 用户画像 &amp; 行为分析 &amp; 小说数据集市</div>
+        <div class="proj-desc">支撑广告增收、留存 &amp; LTV 提升、运营效率优化</div>
+      </div>
+    </div>
 
-        <div class="proj-block">
-            <div class="proj-header">
-                <span class="project-name">Garena 游戏用户画像与精细化运营</span>
-            </div>
-            <p>整合玩家数据搭建分层 / 流失预警 / 付费等级标签，赋能精准投放、流失召回、活动触达。</p>
-        </div>
+    <!-- 自我评价 -->
+    <div class="section">
+      <div class="section-title">自我评价</div>
+      <div class="self-desc">
+        <p>10+ 年数据仓库开发经验，具备 Garena 头部游戏厂商实战经历，精通游戏埋点、数仓建模、用户画像、反作弊数据体系、AI 元数据治理；擅长 PB 级海量数据处理、性能调优、指标体系落地、数仓维护与数据质量保障；覆盖游戏、电商、金融多领域，可快速适配高速业务节奏；具备从 0 到 1 搭建数仓体系、数据驱动业务增长的全栈能力。</p>
+      </div>
+    </div>
 
-        <div class="proj-block">
-            <div class="proj-header">
-                <span class="project-name">Garena 反作弊风控数据体系</span>
-            </div>
-            <p>整合外挂 / 处罚 / 异常对局数据，搭建特征宽表与风控大盘，支撑黑产打击与生态治理。</p>
-        </div>
-    </section>
-
-    <!-- 教育背景 -->
-    <section>
-        <h2>教育背景</h2>
-        <div class="edu-item">
-            <span class="edu-school">上海大学</span>
-            <span class="edu-detail">应用数学 · 本科</span>
-            <span class="date">2008.09 – 2012.07</span>
-        </div>
-    </section>
+  </div>
 </div>
+
+<!-- ====== SOP ====== -->
+<div id="tab-sop" class="tab-content">
+  <div class="sop-page">
+
+    <div class="cover">
+      <h1>数仓0-1建设：业务×技术双轨驱动SOP白皮书</h1>
+      <div class="sub">Data Warehouse 0→1 Build: Business × Technology Dual-Track Driven SOP</div>
+      <div class="meta">版本 1.0 ｜ 2026.05</div>
+    </div>
+
+    <div class="sop-section">
+      <div class="sop-st">核心方法论概述</div>
+      <p>本SOP摒弃"先技术后业务"或"纯业务驱动"的单边模式，采用<strong>双轨咬合机制</strong>。在数仓0-1建设的每一个关键节点，强制要求业务价值锚点与技术工程支撑同步产出、相互验证，确保数仓既"懂业务"又"可维护"。</p>
+    </div>
+
+    <div class="sop-section">
+      <div class="sop-st">建设总览</div>
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th class="col-phase">建设阶段</th>
+            <th class="col-biz">业务方向（价值锚点）</th>
+            <th class="col-tech">技术方向（工程支撑）</th>
+            <th class="col-output">双轨咬合产物</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-phase">资产盘点</td><td>源数据业务语义地图产出 + 主题域划分</td><td>自动化质量探查与基线摸底</td><td>数据可信度基线</td></tr>
+          <tr><td class="col-phase">指标体系</td><td>历史脚本逆向提炼 + 业务补充</td><td>血缘解析与复用度评估</td><td>核心指标定义契约</td></tr>
+          <tr><td class="col-phase">规范治理</td><td>业务术语↔技术词根双向映射</td><td>词根拆解与CI校验插件集成</td><td>沟通零损耗命名规范</td></tr>
+          <tr><td class="col-phase">模型开发</td><td>UAT签收与30天价值度量</td><td>分层架构 + 模型设计 + 开发规范</td><td>可持续交付标准SOP</td></tr>
+          <tr><td class="col-phase">质量保障</td><td>业务验收标准前置</td><td>校验规则配置化 + 分级熔断</td><td>质量左移防护网</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 业务方向 -->
+    <div class="sop-section">
+      <div class="sop-st">业务方向执行细则</div>
+
+      <div class="sop-st2">2.0 源数据业务语义地图产出</div>
+      <p><strong>目标：</strong>将技术元数据翻译为业务可理解的资产目录，解决数据信任问题。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li><strong>5维信息采集：</strong>对每个数据源强制采集技术表名/字段、业务中文名、所属业务域、支撑分析场景、数据Owner及联系方式。</li>
+        <li><strong>L1-L3分级标注：</strong>按业务重要性分级，优先保障L1级（核心指标依赖）数据的语义完整性。</li>
+        <li><strong>双向验证签收：</strong>技术侧完成初版后，必须由业务Owner"认领+修正"签字，未确认数据禁止进入下游建模。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>《数据源业务语义地图》、Owner签收记录、语义完整性检查报告</div>
+
+      <div class="sop-st2">2.1 主题域划分</div>
+      <p><strong>目标：</strong>建立不重叠、不遗漏、不交叉、可扩展的企业级业务数据边界，实现资产按域管理、指标按域归口、模型按域建设。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li>梳理企业全业务链路，输出业务流程地图。</li>
+        <li>按业务链路法输出一级主题域。</li>
+        <li>按业务过程拆解二级子域。</li>
+        <li>把所有源系统、数据表、指标一一归属到对应域。</li>
+        <li>业务Owner评审确认，解决边界交叉问题。</li>
+        <li>发布最终版主题域清单与边界定义。</li>
+      </ul>
+      <p><strong>核心划分方法：</strong></p>
+      <div class="principle-list">
+        <span class="principle-item">业务链路法</span>
+        <span class="principle-item">系统归属法</span>
+        <span class="principle-item">指标归口法</span>
+        <span class="principle-item">不交叉原则</span>
+        <span class="principle-item">两级结构法</span>
+        <span class="principle-item">Owner确权法</span>
+      </div>
+      <ul>
+        <li><strong>业务链路法：</strong>按照企业真实业务发生流程从上到下梳理，形成天然业务边界。</li>
+        <li><strong>系统归属法：</strong>按照源业务系统天然边界归类，确保一个系统优先归属一个主题域。</li>
+        <li><strong>指标归口法：</strong>把高频指标、核心报表按业务口径归属到对应域，确保指标有唯一归属。</li>
+        <li><strong>不交叉原则：</strong>一个表/一个字段/一个指标只属于一个主题域，禁止跨域重复定义。</li>
+        <li><strong>两级结构法：</strong>一级域 = 业务大类，二级子域 = 业务过程/模块，确保结构稳定、可扩展。</li>
+        <li><strong>Owner确权法：</strong>每个主题域必须指定业务Owner + 数据Owner，权责唯一。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>《业务主题域划分手册》</div>
+
+      <div class="sop-st2">2.2 历史脚本逆向提炼高频指标 + 业务补充</div>
+      <p><strong>目标：</strong>从存量混乱资产中萃取共识，避免推倒重来，同时防止技术债延续。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li><strong>自动化聚类：</strong>SQL解析历史脚本，提取高频GROUP BY维度与聚合函数，生成"事实指标热度榜"。</li>
+        <li><strong>差异归类预案：</strong>将同一业务概念的不同计算逻辑归类，提前准备统一/并存/废弃3种处理预案。</li>
+        <li><strong>三轮对齐闭环：</strong>展示热度榜→数据对比辅助决策→签订《指标定义契约》。</li>
+        <li><strong>缺口识别纳入：</strong>同步收集"想要但没有"的新需求，纳入首期建设优先级矩阵。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>《历史指标热度分析报告》、《核心指标定义契约》、新增需求优先级矩阵</div>
+    </div>
+
+    <!-- 技术方向 -->
+    <div class="sop-section">
+      <div class="sop-st">技术方向执行细则</div>
+
+      <div class="sop-st2">3.1 分层架构设定</div>
+      <p><strong>原则：</strong>以业务查询模式驱动，而非理论套用。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li>基于历史查询统计80%高频粒度与关联复杂度，决定DWS预聚合粒度。</li>
+        <li>明确定义每层输入输出约束并写入规范。</li>
+        <li>预设临时层/沙箱层容纳探索性需求。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>《分层架构决策记录》、层级边界检查清单</div>
+
+      <div class="sop-st2">3.2 拆解源数据字段生成统一新词根</div>
+      <p><strong>原则：</strong>从人工约定到机器强制执行。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li>逆向萃取历史高频字段 + 正向映射业务术语，形成《标准词根库V1.0》。</li>
+        <li>开发DDL校验插件集成至CI流水线，不合规直接阻断。</li>
+        <li>设置例外审批留痕机制。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>标准词根库、CI校验插件、例外审批台账</div>
+
+      <div class="sop-st2">3.3 模型设计规范</div>
+      <p><strong>原则：</strong>让正确的事容易做，错误的事难发生。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li>提供标准化建表DDL模板（含注释/分区/生命周期）。</li>
+        <li>模型变更必须附带血缘影响分析。</li>
+        <li>大表强制设计排序键/分桶策略并提供性能基线评估。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>建模DDL模板、模型评审Checklist、性能基线评估表</div>
+
+      <div class="sop-st2">3.4 开发规范</div>
+      <p><strong>原则：</strong>规范不应是负担，而应是提效工具。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li>提供AI辅助生成Prompt模板。</li>
+        <li>沉淀公共函数库，禁止重复造轮子。</li>
+        <li>集成SQL Linter自动化处理格式规范。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>AI Prompt模板库、公共函数库、Linter配置文件</div>
+
+      <div class="sop-st2">3.5 校验规则</div>
+      <p><strong>原则：</strong>质量保障左移至开发态。</p>
+      <p><strong>标准动作：</strong></p>
+      <ul>
+        <li>规则以YAML/JSON配置嵌入ETL任务，与代码同版本管理。</li>
+        <li>建立分级熔断机制（强规则阻断 / 弱规则告警）。</li>
+        <li>提供测试数据构造工具支持本地验证。</li>
+      </ul>
+      <div class="deliverable"><strong>交付物：</strong>质量规则配置库、熔断策略矩阵、测试数据生成器</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.tabs a').forEach(function(tab) {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = this.getAttribute('data-tab');
+      document.querySelectorAll('.tabs a').forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+      document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+      document.getElementById('tab-' + target).classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
